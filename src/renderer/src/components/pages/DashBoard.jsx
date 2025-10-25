@@ -24,8 +24,13 @@ function DashBoardPage(){
         </button>
         </div>
        <LogoConmponent />
-       <div className="border border-white w-full h-96 flex  z-10 mt-20">
-        
+       <div className=" w-full h-96   lg:mt-30 z-10 mt-20 grid grid-flow-col grid-rows-2 gap-10 p-20">
+
+        <button className="border border-black bg-[#CFE0C3]/75 rounded-xl flex justify-center items-center font-semibold text-lg cursor-pointer hover:bg-[#CFE0C3] ">Teacher Details</button>
+        <button className="border border-black  bg-[#CFE0C3]/75  rounded-xl flex justify-center items-center font-semibold text-lg cursor-pointer hover:bg-[#CFE0C3]">Add Leave</button>
+        <button className="border border-black  bg-[#CFE0C3]/75 rounded-xl flex justify-center items-center font-semibold text-lg cursor-pointer hover:bg-[#CFE0C3]">Time Table</button>
+         <button className="border border-black  bg-[#CFE0C3]/75 rounded-xl flex justify-center items-center font-semibold text-lg cursor-pointer hover:bg-[#CFE0C3]">About</button>
+          <button className="border border-black  bg-[#70A9A1]/75 row-span-2 rounded-xl flex justify-center items-center text-white font-semibold text-lg cursor-pointer hover:bg-[#70A9A1]">Leave Details</button>
         </div> 
         </div>
        
