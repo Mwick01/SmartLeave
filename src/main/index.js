@@ -33,6 +33,27 @@ function createWindow() {
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
+  const { ipcMain } = require('electron');
+  const path = require('path');
+  const db = require(path.join(__dirname, 'db.js'));
+
+
+  ipcMain.handle('admin-login', async (event, { username, password }) => {
+    return new Promise((resolve, reject) => {
+      db.get('SELECT * FROM admin WHERE username = ? AND password = ?', [username, password], (err, row) => {
+        if (err) {
+          console.error(err);
+          return reject('Database error');
+        }
+        if (row) {
+          resolve({ success: true });
+        } else {
+          resolve({ success: false });
+        }
+      });
+    });
+  });
+
 }
 
 // This method will be called when Electron has finished
@@ -72,3 +93,5 @@ app.on('window-all-closed', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+//const { ipcMain } = require('electron');
+
