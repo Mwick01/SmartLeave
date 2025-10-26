@@ -26,6 +26,11 @@ function createWindow() {
     return { action: 'deny' }
   })
 
+  mainWindow.webContents.openDevTools({ mode: 'detach' });
+  mainWindow.webContents.on('console-message', (_, level, message) => {
+    console.log('Renderer:', message);
+  });
+
   // HMR for renderer base on electron-vite cli.
   // Load the remote URL for development or the local html file for production.
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {

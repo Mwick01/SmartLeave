@@ -1,16 +1,16 @@
 import LoginPage from './components/pages/LoginPage'
 import DashBoardPage from './components/pages/DashBoard'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/dashboard" element={<DashBoardPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
